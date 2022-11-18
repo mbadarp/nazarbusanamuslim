@@ -1,8 +1,13 @@
-  <!-- Content wrapper -->
-  <div class="content-wrapper">
-      <!-- Content -->
+    <!-- ============================================================== -->
+    <!-- Start right Content here -->
+    <!-- ============================================================== -->
+    <div class="main-content">
+      <div class="page-content">
+        <div class="container-fluid">
 
-      <div class="container-fluid flex-grow-1 container-p-y">
 
+
+        </div>
+        <!-- container-fluid -->
       </div>
-      <!-- / Content -->
+      <!-- End Page-content -->

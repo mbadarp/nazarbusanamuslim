@@ -1,57 +1,49 @@
-               <!-- Footer -->
-               <footer class="content-footer footer bg-footer-theme">
-                   <div class="container-fluid d-flex flex-wrap justify-content-between py-2 flex-md-row flex-column">
-                       <div class="mb-2 mb-md-0">
-                           ©
-                           <script>
-                               document.write(new Date().getFullYear());
-                           </script>
-                           , made with ❤️ by
-                           <a href="https://themeselection.com" target="_blank" class="footer-link fw-bolder">ThemeSelection</a>
-                       </div>
-                       <div>
-                           <a href="https://themeselection.com/license/" class="footer-link me-4" target="_blank">License</a>
-                           <a href="https://themeselection.com/" target="_blank" class="footer-link me-4">More Themes</a>
+<footer class="footer">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-6">
+                <script>
+                    document.write(new Date().getFullYear())
+                </script> &copy; Vuesy.
+            </div>
+            <div class="col-sm-6">
+                <div class="text-sm-end d-none d-sm-block">
+                    Crafted with <i class="mdi mdi-heart text-danger"></i> by <a href="https://1.envato.market/themesdesign" target="_blank">Themesdesign</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+</div>
+<!-- end main content-->
 
-                           <a href="https://themeselection.com/demo/sneat-bootstrap-html-admin-template/documentation/" target="_blank" class="footer-link me-4">Documentation</a>
+</div>
+<!-- END layout-wrapper -->
 
-                           <a href="https://github.com/themeselection/sneat-html-admin-template-free/issues" target="_blank" class="footer-link me-4">Support</a>
-                       </div>
-                   </div>
-               </footer>
-               <!-- / Footer -->
 
-               <div class="content-backdrop fade"></div>
-               </div>
-               <!-- Content wrapper -->
-               </div>
-               <!-- / Layout page -->
-               </div>
+<!-- Right bar overlay-->
+<div class="rightbar-overlay"></div>
 
-               <!-- Overlay -->
-               <div class="layout-overlay layout-menu-toggle"></div>
-               </div>
-               <!-- / Layout wrapper -->
+<!-- JAVASCRIPT -->
+<script src="<?= base_url('assets/admin/') ?>libs/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="<?= base_url('assets/admin/') ?>libs/metismenujs/metismenujs.min.js"></script>
+<script src="<?= base_url('assets/admin/') ?>libs/simplebar/simplebar.min.js"></script>
+<script src="<?= base_url('assets/admin/') ?>libs/feather-icons/feather.min.js"></script>
 
-               <!-- Core JS -->
-               <!-- build:js assets/vendor/js/core.js -->
-               <script src="<?= base_url('assets/admin/') ?>assets/vendor/libs/jquery/jquery.js"></script>
-               <script src="<?= base_url('assets/admin/') ?>assets/vendor/libs/popper/popper.js"></script>
-               <script src="<?= base_url('assets/admin/') ?>assets/vendor/js/bootstrap.js"></script>
-               <script src="<?= base_url('assets/admin/') ?>assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js"></script>
+<!-- apexcharts -->
+<script src="<?= base_url('assets/admin/') ?>libs/apexcharts/apexcharts.min.js"></script>
 
-               <script src="<?= base_url('assets/admin/') ?>assets/vendor/js/menu.js"></script>
-               <!-- endbuild -->
+<!-- Vector map-->
+<script src="<?= base_url('assets/admin/') ?>libs/jsvectormap/js/jsvectormap.min.js"></script>
+<script src="<?= base_url('assets/admin/') ?>libs/jsvectormap/maps/world-merc.js"></script>
 
-               <!-- Vendors JS -->
+<!-- swiper js -->
+<script src="<?= base_url('assets/admin/') ?>libs/swiper/swiper-bundle.min.js"></script>
 
-               <!-- Main JS -->
-               <script src="<?= base_url('assets/admin/') ?>assets/js/main.js"></script>
+<script src="<?= base_url('assets/admin/') ?>js/pages/dashboard.init.js"></script>
 
-               <!-- Page JS -->
+<script src="<?= base_url('assets/admin/') ?>js/app.js"></script>
 
-               <!-- Place this tag in your head or just before your close body tag. -->
-               <script async defer src="https://buttons.github.io/buttons.js"></script>
-               </body>
+</body>
 
-               </html>
+</html>
