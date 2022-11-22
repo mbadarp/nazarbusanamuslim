@@ -36,41 +36,51 @@
                                         <h5 class="mb-0">Welcome Back !</h5>
                                         <p class="text-muted mt-2">Sign in to continue to Nazar.</p>
                                     </div>
-                                    <form class="mt-4 pt-2" method="POST" action="<?= base_url('auth') ?>">
+                                    <form class="mt-4 pt-2" method="POST" action="<?= base_url('auth/registration') ?>">
+                                        <div class="form-floating form-floating-custom mb-3">
+                                            <input type="text" class="form-control" id="name" name="name" placeholder="Enter Full name" autofocus>
+                                            <label for="name">Full Name</label>
+                                            <div class="form-floating-icon">
+                                                <i class='bx bxs-user'></i>
+                                            </div>
+                                            <?= form_error('name', '<small class="text-danger ps-1">', '</small>') ?>
+                                        </div>
                                         <div class="form-floating form-floating-custom mb-3">
                                             <input type="text" class="form-control" id="email" name="email" placeholder="Enter Email" autofocus>
                                             <label for="email">Email</label>
                                             <div class="form-floating-icon">
-                                                <i class='bx bxs-user'></i>
+                                                <i class='bx bx-envelope'></i>
                                             </div>
                                             <?= form_error('email', '<small class="text-danger ps-1">', '</small>') ?>
                                         </div>
 
                                         <div class="form-floating form-floating-custom mb-3 auth-pass-inputgroup">
-                                            <input type="password" class="form-control" id="password" name="password" placeholder="Enter Password">
-                                            <label for="password">Password</label>
+                                            <input type="password" class="form-control" id="password1" name="password1" placeholder="Enter Password">
+                                            <label for="password1">Password</label>
                                             <div class="form-floating-icon">
                                                 <i class='bx bx-key'></i>
                                             </div>
-                                            <?= form_error('password', '<small class="text-danger ps-1">', '</small>') ?>
+                                            <?= form_error('password1', '<small class="text-danger ps-1">', '</small>') ?>
+                                        </div>
+                                        <div class="form-floating form-floating-custom mb-3 auth-pass-inputgroup">
+                                            <input type="password" class="form-control" id="password2" name="password2" placeholder="Repeat Password">
+                                            <label for="password2">Repeat Password</label>
+                                            <div class="form-floating-icon">
+                                                <i class='bx bx-key'></i>
+                                            </div>
+                                            <?= form_error('password2', '<small class="text-danger ps-1">', '</small>') ?>
                                         </div>
 
-                                        <div class="form-check form-check-primary font-size-16 py-1">
-                                            <input class="form-check-input" type="checkbox" id="remember-check">
-                                            <div class="float-end">
-                                                <a href="auth-resetpassword-basic.html" class="text-muted text-decoration-underline font-size-14">Forgot your password?</a>
-                                            </div>
-                                            <label class="form-check-label font-size-14" for="remember-check">
-                                                Remember me
-                                            </label>
+                                        <div class="py-1">
+                                            <p class="mb-0">By registering you agree to the Nazar <a href="#" class="text-primary">Terms of Use</a></p>
                                         </div>
 
                                         <div class="mt-3">
-                                            <button class="btn btn-primary w-100" type="submit">Log In</button>
+                                            <button class="btn btn-primary w-100" type="submit">Register</button>
                                         </div>
 
                                         <div class="mt-4 pt-3 text-center">
-                                            <p class="text-muted mb-0">Don't have an account ? <a href="<?= base_url('auth/registration') ?>" class="fw-semibold text-decoration-underline"> Signup Now </a> </p>
+                                            <p class="text-muted mb-0">Already have an account ? <a href="<?= base_url('auth') ?>" class="fw-semibold text-decoration-underline"> Login </a> </p>
                                         </div>
 
                                     </form><!-- end form -->

@@ -34,13 +34,16 @@
                <!-- Left Menu Start -->
                <ul class="metismenu list-unstyled" id="side-menu">
                    <li class="menu-title" data-key="t-menu">Menu</li>
-
                    <li>
-                       <a href="index.html">
+                       <a href="javascript: void(0);" class="has-arrow">
                            <i class="bx bx-home-circle nav-icon"></i>
-                           <span class="menu-item" data-key="t-dashboard">Dashboard</span>
+                           <span class="menu-item" data-key="t-ecommerce">Home</span>
                        </a>
+                       <ul class="sub-menu" aria-expanded="false">
+                           <li><a href="#" data-key="t-products">Dashboard</a></li>
+                       </ul>
                    </li>
+
 
                    <li class="menu-title" data-key="t-applications">Applications</li>
 
