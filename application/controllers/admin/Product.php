@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class Dashboard extends CI_Controller
+class Product extends CI_Controller
 {
     public function __construct()
     {
@@ -12,10 +12,11 @@ class Dashboard extends CI_Controller
     public function index()
     {
         $data = [
-            'title' => 'Dashboard',
+            'title' => 'Produk',
             'user' => infoLogin(),
-            'content' => 'admin/dashboard/index'
+            'content' => 'admin/ecommerce/product/index'
         ];
+
         $this->load->view('admin/templates/main', $data);
     }
 }

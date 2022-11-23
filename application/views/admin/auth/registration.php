@@ -38,7 +38,7 @@
                                     </div>
                                     <form class="mt-4 pt-2" method="POST" action="<?= base_url('auth/registration') ?>">
                                         <div class="form-floating form-floating-custom mb-3">
-                                            <input type="text" class="form-control" id="name" name="name" placeholder="Enter Full name" autofocus>
+                                            <input type="text" class="form-control" id="name" name="name" placeholder="Enter Full name" autofocus value="<?= set_value('name') ?>">
                                             <label for="name">Full Name</label>
                                             <div class="form-floating-icon">
                                                 <i class='bx bxs-user'></i>
@@ -46,7 +46,7 @@
                                             <?= form_error('name', '<small class="text-danger ps-1">', '</small>') ?>
                                         </div>
                                         <div class="form-floating form-floating-custom mb-3">
-                                            <input type="text" class="form-control" id="email" name="email" placeholder="Enter Email" autofocus>
+                                            <input type="text" class="form-control" id="email" name="email" placeholder="Enter Email" autofocus value="<?= set_value('email') ?>">
                                             <label for="email">Email</label>
                                             <div class="form-floating-icon">
                                                 <i class='bx bx-envelope'></i>

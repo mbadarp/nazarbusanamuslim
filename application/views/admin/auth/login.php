@@ -36,6 +36,7 @@
                                         <h5 class="mb-0">Welcome Back !</h5>
                                         <p class="text-muted mt-2">Sign in to continue to Nazar.</p>
                                     </div>
+                                    <?= $this->session->flashdata('message') ?>
                                     <form class="mt-4 pt-2" method="POST" action="<?= base_url('auth') ?>">
                                         <div class="form-floating form-floating-custom mb-3">
                                             <input type="text" class="form-control" id="email" name="email" placeholder="Enter Email" autofocus>
@@ -56,13 +57,10 @@
                                         </div>
 
                                         <div class="form-check form-check-primary font-size-16 py-1">
-                                            <input class="form-check-input" type="checkbox" id="remember-check">
                                             <div class="float-end">
                                                 <a href="auth-resetpassword-basic.html" class="text-muted text-decoration-underline font-size-14">Forgot your password?</a>
                                             </div>
-                                            <label class="form-check-label font-size-14" for="remember-check">
-                                                Remember me
-                                            </label>
+
                                         </div>
 
                                         <div class="mt-3">

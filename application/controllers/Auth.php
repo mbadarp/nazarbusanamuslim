@@ -12,6 +12,8 @@ class Auth extends CI_Controller
 
     public function index()
     {
+        $this->_verifyAccess();
+
         $data = [
             'title' => 'Login Page'
         ];
@@ -22,11 +24,11 @@ class Auth extends CI_Controller
         if ($this->form_validation->run() == false) {
             $this->load->view('admin/auth/login', $data);
         } else {
-            $this->login();
+            $this->_login();
         }
     }
 
-    private function login()
+    private function _login()
     {
         $email = $this->input->post('email');
         $password = $this->input->post('password');
@@ -35,6 +37,28 @@ class Auth extends CI_Controller
 
         // if user registered
         if ($user) {
+            // if user active
+            if ($user['is_active'] == 1) {
+                // check password
+                if (password_verify($password, $user['password'])) {
+                    $data = [
+                        'email' => $user['email'],
+                        'role_id' => $user['role_id']
+                    ];
+                    $this->session->set_userdata($data);
+                    if ($user['role_id'] == 1) {
+                        redirect('admin/dashboard');
+                    } else {
+                        redirect('home');
+                    }
+                } else {
+                    $this->session->set_flashdata('message', ' <div class="alert alert-danger" role="alert">Wrong Password!</div>');
+                    redirect('auth');
+                }
+            } else {
+                $this->session->set_flashdata('message', ' <div class="alert alert-danger" role="alert">This account is not active!</div>');
+                redirect('auth');
+            }
         } else {
             $this->session->set_flashdata('message', ' <div class="alert alert-danger" role="alert">Email is not registered!</div>');
             redirect('auth');
@@ -43,6 +67,8 @@ class Auth extends CI_Controller
 
     public function registration()
     {
+        $this->_verifyAccess();
+
         $data = [
             'title' => 'Registration'
         ];
@@ -51,7 +77,7 @@ class Auth extends CI_Controller
         $this->form_validation->set_rules('email', 'Email', 'required|trim|valid_email|is_unique[tb_user.email]', [
             'is_unique' => 'This email has already registered!'
         ]);
-        $this->form_validation->set_rules('password1', 'Password', 'required|trim|min_length[3]|mathces[password2]', [
+        $this->form_validation->set_rules('password1', 'Password', 'required|trim|min_length[3]|matches[password2]', [
             'mathces' => 'Password dont match!',
             'min_length' => 'Password to short!'
         ]);
@@ -64,6 +90,26 @@ class Auth extends CI_Controller
             $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">
             Congratulation! your account has been created. </div>');
             redirect('auth');
+        }
+    }
+
+    public function logout()
+    {
+        $this->session->unset_userdata('email');
+        $this->session->unset_userdata('role_id');
+
+        $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">
+        You have been logged out! </div>');
+        redirect('auth');
+    }
+
+    private function _verifyAccess()
+    {
+        $level = $this->session->userdata('role_id');
+
+        if ($level == 1) {
+            redirect('admin/dashboard');
+            return false;
         }
     }
 }

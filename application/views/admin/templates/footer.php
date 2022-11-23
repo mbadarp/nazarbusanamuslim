@@ -4,12 +4,12 @@
             <div class="col-sm-6">
                 <script>
                     document.write(new Date().getFullYear())
-                </script> &copy; Vuesy.
+                </script> &copy; Nazar Jember.
             </div>
             <div class="col-sm-6">
-                <div class="text-sm-end d-none d-sm-block">
-                    Crafted with <i class="mdi mdi-heart text-danger"></i> by <a href="https://1.envato.market/themesdesign" target="_blank">Themesdesign</a>
-                </div>
+                <!-- <div class="text-sm-end d-none d-sm-block">
+                    Crafted with <i class="mdi mdi-heart text-danger"></i> by <a href="#">Nazar Jember</a>
+                </div> -->
             </div>
         </div>
     </div>
@@ -41,6 +41,11 @@
 <script src="<?= base_url('assets/admin/') ?>libs/swiper/swiper-bundle.min.js"></script>
 
 <script src="<?= base_url('assets/admin/') ?>js/pages/dashboard.init.js"></script>
+
+<!-- gridjs js -->
+<script src="<?= base_url('assets/admin/') ?>libs/gridjs/gridjs.umd.js"></script>
+
+<script src="<?= base_url('assets/admin/') ?>js/pages/gridjs.init.js"></script>
 
 <script src="<?= base_url('assets/admin/') ?>js/app.js"></script>
 
