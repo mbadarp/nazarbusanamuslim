@@ -9,7 +9,7 @@
                     <div class="col-lg-12">
                         <div class="card">
                             <div class="card-header justify-content-between d-flex align-items-center">
-                                <h4 class="card-title">GridJs Table</h4>
+                                <h4 class="card-title">Data Produk</h4>
                             </div><!-- end card header -->
                             <div class="card-body">
                                 <div id="table-gridjs"></div>

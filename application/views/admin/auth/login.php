@@ -1,105 +1,95 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
-
     <meta charset="utf-8" />
-    <title><?= $title ?></title>
+    <title><?= $title ?> | Nazar</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
-    <meta content="Themesdesign" name="author" />
+    <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
+    <meta content="Coderthemes" name="author" />
     <!-- App favicon -->
     <link rel="shortcut icon" href="<?= base_url('assets/admin/') ?>images/favicon.ico">
 
-    <!-- Bootstrap Css -->
-    <link href="<?= base_url('assets/admin/') ?>css/bootstrap.min.css" id="bootstrap-style" rel="stylesheet" type="text/css" />
-    <!-- Icons Css -->
-    <link href="<?= base_url('assets/admin/') ?>css/icons.min.css" rel="stylesheet" type="text/css" />
-    <!-- App Css-->
-    <link href="<?= base_url('assets/admin/') ?>css/app.min.css" id="app-style" rel="stylesheet" type="text/css" />
+    <!-- App css -->
+    <link href="<?= base_url('assets/admin/') ?>css/icons.min.css" rel="stylesheet" type="text/css">
+    <link href="<?= base_url('assets/admin/') ?>css/app.min.css" rel="stylesheet" type="text/css" id="light-style">
+    <link href="<?= base_url('assets/admin/') ?>css/app-dark.min.css" rel="stylesheet" type="text/css" id="dark-style">
 
 </head>
 
-<body>
-    <div class="auth-bg-basic d-flex align-items-center min-vh-100">
-        <div class="bg-overlay bg-light"></div>
-        <div class="container">
-            <div class="d-flex flex-column min-vh-100 py-5 px-3">
+<body class="authentication-bg pb-0" data-layout-config='{"darkMode":false}'>
 
+    <div class="auth-fluid">
+        <!--Auth fluid left content -->
+        <div class="auth-fluid-form-box">
+            <div class="align-items-center d-flex h-100">
+                <div class="card-body">
 
-                <div class="row justify-content-center my-auto">
-                    <div class="col-md-8 col-lg-6 col-xl-5">
-                        <div class="card bg-transparent shadow-none border-0">
-                            <div class="card-body">
-                                <div class="py-3">
-                                    <div class="text-center">
-                                        <h5 class="mb-0">Welcome Back !</h5>
-                                        <p class="text-muted mt-2">Sign in to continue to Nazar.</p>
-                                    </div>
-                                    <?= $this->session->flashdata('message') ?>
-                                    <form class="mt-4 pt-2" method="POST" action="<?= base_url('auth') ?>">
-                                        <div class="form-floating form-floating-custom mb-3">
-                                            <input type="text" class="form-control" id="email" name="email" placeholder="Enter Email" autofocus>
-                                            <label for="email">Email</label>
-                                            <div class="form-floating-icon">
-                                                <i class='bx bxs-user'></i>
-                                            </div>
-                                            <?= form_error('email', '<small class="text-danger ps-1">', '</small>') ?>
-                                        </div>
-
-                                        <div class="form-floating form-floating-custom mb-3 auth-pass-inputgroup">
-                                            <input type="password" class="form-control" id="password" name="password" placeholder="Enter Password">
-                                            <label for="password">Password</label>
-                                            <div class="form-floating-icon">
-                                                <i class='bx bx-key'></i>
-                                            </div>
-                                            <?= form_error('password', '<small class="text-danger ps-1">', '</small>') ?>
-                                        </div>
-
-                                        <div class="form-check form-check-primary font-size-16 py-1">
-                                            <div class="float-end">
-                                                <a href="auth-resetpassword-basic.html" class="text-muted text-decoration-underline font-size-14">Forgot your password?</a>
-                                            </div>
-
-                                        </div>
-
-                                        <div class="mt-3">
-                                            <button class="btn btn-primary w-100" type="submit">Log In</button>
-                                        </div>
-
-                                        <div class="mt-4 pt-3 text-center">
-                                            <p class="text-muted mb-0">Don't have an account ? <a href="<?= base_url('auth/registration') ?>" class="fw-semibold text-decoration-underline"> Signup Now </a> </p>
-                                        </div>
-
-                                    </form><!-- end form -->
-                                </div>
-                            </div>
-                        </div>
+                    <!-- Logo -->
+                    <div class="auth-brand text-center text-lg-start">
+                        <a href="index.html" class="logo-dark">
+                            <span><img src="<?= base_url('assets/admin/') ?>images/logo-dark.png" alt="" height="18"></span>
+                        </a>
+                        <a href="index.html" class="logo-light">
+                            <span><img src="<?= base_url('assets/admin/') ?>images/logo.png" alt="" height="18"></span>
+                        </a>
                     </div>
-                </div> <!-- end row -->
 
-                <div class="row">
-                    <div class="col-xl-12">
-                        <div class="mt-4 mt-md-5 text-center">
-                            <p class="mb-0">© <script>
-                                    document.write(new Date().getFullYear())
-                                </script> Nazar.</p>
+                    <!-- title-->
+                    <h4 class="mt-0">Sign In</h4>
+                    <p class="text-muted mb-4">Enter your email address and password to access account.</p>
+
+                    <?= $this->session->flashdata('message'); ?>
+
+                    <!-- form -->
+                    <form action="<?= base_url('auth') ?>" method="POST">
+                        <div class="mb-3">
+                            <label for="emailaddress" class="form-label">Email address</label>
+                            <input class="form-control" type="text" id="emailaddress" name="email" placeholder="Enter your email">
+                            <?= form_error('email', '<small class="text-danger ps-1">', '</small>'); ?>
                         </div>
-                    </div>
-                </div> <!-- end row -->
-            </div>
+                        <div class="mb-3">
+                            <a href="pages-recoverpw-2.html" class="text-muted float-end"><small>Forgot your password?</small></a>
+                            <label for="password" class="form-label">Password</label>
+                            <input class="form-control" type="password" id="password" name="password" placeholder="Enter your password">
+                            <?= form_error('password', '<small class="text-danger ps-1">', '</small>'); ?>
+                        </div>
+
+                        <div class="d-grid mb-0 text-center">
+                            <button class="btn btn-primary" type="submit"><i class="mdi mdi-login"></i> Log In </button>
+                        </div>
+
+                    </form>
+                    <!-- end form-->
+
+                    <!-- Footer-->
+                    <footer class="footer footer-alt">
+                        <p class="text-muted">Don't have an account? <a href="pages-register-2.html" class="text-muted ms-1"><b>Sign Up</b></a></p>
+                    </footer>
+
+                </div> <!-- end .card-body -->
+            </div> <!-- end .align-items-center.d-flex.h-100-->
         </div>
-        <!-- end container fluid -->
+        <!-- end auth-fluid-form-box-->
+
+        <!-- Auth fluid right content -->
+        <div class="auth-fluid-right text-center">
+            <div class="auth-user-testimonial">
+                <h2 class="mb-3">I love the color!</h2>
+                <p class="lead"><i class="mdi mdi-format-quote-open"></i> It's a elegent templete. I love it very much! . <i class="mdi mdi-format-quote-close"></i>
+                </p>
+                <p>
+                    - Nazar Admin User
+                </p>
+            </div> <!-- end auth-user-testimonial-->
+        </div>
+        <!-- end Auth fluid right content -->
     </div>
-    <!-- end authentication section -->
+    <!-- end auth-fluid-->
 
-    <!-- JAVASCRIPT -->
-    <script src="<?= base_url('assets/admin/') ?>libs/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="<?= base_url('assets/admin/') ?>libs/metismenujs/metismenujs.min.js"></script>
-    <script src="<?= base_url('assets/admin/') ?>libs/simplebar/simplebar.min.js"></script>
-    <script src="<?= base_url('assets/admin/') ?>libs/feather-icons/feather.min.js"></script>
-
-    <script src="<?= base_url('assets/admin/') ?>js/pages/pass-addon.init.js"></script>
+    <!-- bundle -->
+    <script src="<?= base_url('assets/admin/') ?>js/vendor.min.js"></script>
+    <script src="<?= base_url('assets/admin/') ?>js/app.min.js"></script>
 
 </body>
 
