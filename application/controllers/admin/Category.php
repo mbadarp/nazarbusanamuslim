@@ -7,6 +7,7 @@ class Category extends CI_Controller
     {
         parent::__construct();
         is_logged_in();
+        $this->load->model('Category_m');
     }
 
     public function index()
@@ -14,9 +15,19 @@ class Category extends CI_Controller
         $data = [
             'title' => 'Kategori Produk',
             'user' => infoLogin(),
-            'content' => 'admin/ecommerce/category/index'
+            'content' => 'admin/ecommerce/category/index',
+            'category' => $this->Category_m->getAllData()
         ];
 
         $this->load->view('admin/templates/main', $data);
+    }
+
+    public function inputKategori()
+    {
+        $this->Category_m->Save();
+        $this->session->set_flashdata('message', '<div class="alert alert-success alert-dismissible bg-success text-white border-0 fade show" role="alert"> <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        Data Kategori - <strong>Berhasil Ditambahkan!</strong>
+        </div>');
+        redirect('admin/category');
     }
 }

@@ -103,10 +103,11 @@
                     <li class="dropdown notification-list">
                         <a class="nav-link dropdown-toggle nav-user arrow-none me-0" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
                             <span class="account-user-avatar">
-                                <img src="<?= base_url('assets/admin/images/users/') . $user['image'] ?>" alt="user-image" class="rounded-circle">
+                                <?php $image = isset($user['image']) ? $user['image'] : '' ?>
+                                <img src="<?= base_url('assets/admin/images/users/') . $image ?>" alt="user-image" class="rounded-circle">
                             </span>
                             <span>
-                                <span class="account-user-name"><?= $user['name'] ?></span>
+                                <span class="account-user-name"><?= isset($user['name']) ? $user['name'] : '' ?></span>
                                 <span class="account-position">Founder</span>
                             </span>
                         </a>

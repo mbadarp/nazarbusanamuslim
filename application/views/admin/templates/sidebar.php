@@ -27,7 +27,7 @@
 
           <li class="side-nav-item">
               <a data-bs-toggle="collapse" href="#sidebarDashboards" aria-expanded="false" aria-controls="sidebarDashboards" class="side-nav-link">
-                  <i class="uil-home-alt"></i>
+                  <i class="uil-dashboard"></i>
                   <span> Dashboards </span>
                   <span class="menu-arrow"></span>
               </a>
@@ -40,14 +40,63 @@
               </div>
           </li>
 
-          <li class="side-nav-title side-nav-item">Apps</li>
+          <li class="side-nav-item">
+              <a data-bs-toggle="collapse" href="#sidebarMenuUtama" aria-expanded="false" aria-controls="sidebarMenuUtama" class="side-nav-link">
+                  <i class="uil-home-alt"></i>
+                  <span> Menu Utama </span>
+                  <span class="menu-arrow"></span>
+              </a>
+              <div class="collapse" id="sidebarMenuUtama">
+                  <ul class="side-nav-second-level">
+                      <li>
+                          <a href="#">Indentitas Website</a>
+                      </li>
+                      <li>
+                          <a href="#">Banner Website</a>
+                      </li>
+                  </ul>
+              </div>
+          </li>
 
           <li class="side-nav-item">
-              <a href="apps-calendar.html" class="side-nav-link">
-                  <i class="uil-calender"></i>
-                  <span> Calendar </span>
+              <a data-bs-toggle="collapse" href="#sidebarEcommerce" aria-expanded="false" aria-controls="sidebarEcommerce" class="side-nav-link">
+                  <i class="uil-shop"></i>
+                  <span> Modul Ecommerce </span>
+                  <span class="menu-arrow"></span>
               </a>
+              <div class="collapse" id="sidebarEcommerce">
+                  <ul class="side-nav-second-level">
+                      <li>
+                          <a href="#">Data Produk</a>
+                      </li>
+                      <li>
+                          <a href="<?= base_url('admin/category') ?>">Kategori Produk</a>
+                      </li>
+                  </ul>
+              </div>
           </li>
+
+          <li class="side-nav-title side-nav-item">User Menu</li>
+
+          <li class="side-nav-item">
+              <a data-bs-toggle="collapse" href="#sidebarModulUser" aria-expanded="false" aria-controls="sidebarModulUser" class="side-nav-link">
+                  <i class="uil-user-square"></i>
+                  <span> Modul User </span>
+                  <span class="menu-arrow"></span>
+              </a>
+              <div class="collapse" id="sidebarModulUser">
+                  <ul class="side-nav-second-level">
+                      <li>
+                          <a href="#">Manajemen User</a>
+                      </li>
+                      <li>
+                          <a href="#">Manajemen Modul</a>
+                      </li>
+                  </ul>
+              </div>
+          </li>
+
+
 
       </ul>
 

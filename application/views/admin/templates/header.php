@@ -12,6 +12,10 @@
 
     <!-- third party css -->
     <link href="<?= base_url('assets/admin/') ?>css/vendor/jquery-jvectormap-1.2.2.css" rel="stylesheet" type="text/css">
+    <link href="<?= base_url('assets/admin/') ?>css/vendor/dataTables.bootstrap5.css" rel="stylesheet" type="text/css">
+    <link href="<?= base_url('assets/admin/') ?>css/vendor/responsive.bootstrap5.css" rel="stylesheet" type="text/css">
+    <link href="<?= base_url('assets/admin/') ?>css/vendor/buttons.bootstrap5.css" rel="stylesheet" type="text/css">
+    <link href="<?= base_url('assets/admin/') ?>css/vendor/select.bootstrap5.css" rel="stylesheet" type="text/css">
     <!-- third party css end -->
 
     <!-- App css -->
