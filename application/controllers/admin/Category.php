@@ -26,8 +26,15 @@ class Category extends CI_Controller
     {
         $this->Category_m->Save();
         $this->session->set_flashdata('message', '<div class="alert alert-success alert-dismissible bg-success text-white border-0 fade show" role="alert"> <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-        Data Kategori - <strong>Berhasil Ditambahkan!</strong>
+        <strong>Success!</strong> Data Kategori berhasil ditambahkan.
         </div>');
+        redirect('admin/category');
+    }
+
+    public function hapusKategori($id = '')
+    {
+        $this->Category_m->Delete($id);
+        $this->session->set_flashdata('message', 'Dihapus');
         redirect('admin/category');
     }
 }

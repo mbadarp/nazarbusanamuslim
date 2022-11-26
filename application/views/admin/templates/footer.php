@@ -52,6 +52,7 @@
       <script src="<?= base_url('assets/admin/') ?>js/vendor/buttons.print.min.js"></script>
       <script src="<?= base_url('assets/admin/') ?>js/vendor/dataTables.keyTable.min.js"></script>
       <script src="<?= base_url('assets/admin/') ?>js/vendor/dataTables.select.min.js"></script>
+      <script src="<?= base_url('assets/admin/') ?>js/sweetalert2/sweetalert2.all.min.js"></script>
       <!-- third party js ends -->
 
       <!-- demo app -->

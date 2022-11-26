@@ -45,7 +45,9 @@
                                     <td><?= $i ?></td>
                                     <td><?= $c['category'] ?></td>
                                     <td>
-                                        <button type="button" class="badge btn-primary"><i class="uil-pen"></i> </button>
+                                        <a href="#" class="badge btn-primary" onclick="Swal.fire({ title: 'aa', text:'aa', icon:'success' })"> <i class="uil-pen" style="font-size: 1rem;"></i> </a>
+                                        <a href="<?= base_url('admin/category/hapusKategori/') . $c['id_category'] ?>" class="badge btn-danger tombol-hapus"> <i class="uil-trash-alt" style="font-size: 1rem;"></i> </a>
+
                                     </td>
                                 </tr>
                                 <?php $i++; ?>

@@ -18,4 +18,9 @@ class Category_m extends CI_Model
         ];
         return $this->db->insert($this->table, $data);
     }
+
+    public function Delete($id)
+    {
+        return $this->db->where($this->primary, $id)->delete($this->table);
+    }
 }
