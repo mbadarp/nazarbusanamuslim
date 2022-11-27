@@ -35,6 +35,7 @@
       <!-- bundle -->
       <script src="<?= base_url('assets/admin/') ?>js/vendor.min.js"></script>
       <script src="<?= base_url('assets/admin/') ?>js/app.min.js"></script>
+      <script src="<?= base_url('assets/admin/') ?>js/myscript.js"></script>
 
       <!-- third party js -->
       <script src="<?= base_url('assets/admin/') ?>js/vendor/apexcharts.min.js"></script>

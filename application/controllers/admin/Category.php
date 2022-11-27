@@ -34,7 +34,9 @@ class Category extends CI_Controller
     public function hapusKategori($id = '')
     {
         $this->Category_m->Delete($id);
-        $this->session->set_flashdata('message', 'Dihapus');
+        $this->session->set_flashdata('message', '<div class="alert alert-success alert-dismissible bg-success text-white border-0 fade show" role="alert"> <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        <strong>Success!</strong> Data Kategori berhasil dihapus.
+        </div>');
         redirect('admin/category');
     }
 }

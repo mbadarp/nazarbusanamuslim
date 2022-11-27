@@ -23,7 +23,7 @@
             <div class="card">
                 <div class="card-header">
                     <?php include 'input_category.php' ?>
-                    <button type="btn btn-primary btn-sm float-end" class="btn btn-info" onclick="tambahKategori()">
+                    <button type="button" class="btn btn-primary btn-sm" onclick="tambahKategori()">
                         <i class=" uil-plus"></i> <span> Tambah Data</span> </button>
                 </div>
                 <div class="card-body">
@@ -45,9 +45,9 @@
                                     <td><?= $i ?></td>
                                     <td><?= $c['category'] ?></td>
                                     <td>
-                                        <a href="#" class="badge btn-primary" onclick="Swal.fire({ title: 'aa', text:'aa', icon:'success' })"> <i class="uil-pen" style="font-size: 1rem;"></i> </a>
-                                        <a href="<?= base_url('admin/category/hapusKategori/') . $c['id_category'] ?>" class="badge btn-danger tombol-hapus"> <i class="uil-trash-alt" style="font-size: 1rem;"></i> </a>
+                                        <a href="#" class="badge btn-primary" onclick="editKategori()" data-id="<?= $c['id_category'] ?>"> <i class="uil-pen" style="font-size: 1rem;"></i> </a>
 
+                                        <a href="<?= base_url('admin/category/hapusKategori/') . $c['id_category'] ?>" class="badge btn-danger tombol-hapus"> <i class="uil-trash-alt" style="font-size: 1rem;"></i> </a>
                                     </td>
                                 </tr>
                                 <?php $i++; ?>
@@ -68,5 +68,5 @@
 </div> <!-- container -->
 
 </div> <!-- content -->
-
 <?php include 'script.php' ?>
+<?php include 'edit_kategori.php' ?>
